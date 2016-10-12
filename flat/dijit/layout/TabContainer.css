@@ -1,52 +1,53 @@
-/* TabContainer 
- * 
+/* TabContainer
+ *
  * Styling TabContainer means styling the TabList and Its content container  (dijitTitlePane)
- * 
+ *
  * Tab List: (including 4 kinds of tab location)
  * 		.dijitTabContainerTop-tabs     - tablist container at top
  * 		.dijitTabContainerBottom-tabs  - tablist container at bottom
  * 		.dijitTabContainerLeft-tabs    - tablist container at left
  * 		.dijitTabContainerRight-tabs   - tablist container at right
- * 
+ *
  * Tab Strip Button:
  * 		.dijitTabStripIcon - tab strip button icon
  * 		.dijitTabStripMenuIcon - down arrow icon position
  * 		.dijitTabStripSlideLeftIcon - left arrow icon position
  * 		.dijitTabStripSlideRightIcon - right arrow icon position
- * 
+ *
  * 		.tabStripButtonDisabled - styles for disabled tab strip buttons
- * 
+ *
  * Tab Button:
  * 		.dijitTabContainerTop-tabs .dijitTab     - styles for top tab button container
  * 		.dijitTabContainerBottom-tabs .dijitTab  - styles for bottom tab button container
  * 		.dijitTabContainerLeft-tabs .dijitTab    - styles for left tab button container
  * 		.dijitTabContainerRight-tabs .dijitTab   - styles for right tab button container
- * 
+ *
  * 		.dijitTabContainerTop-tabs .dijitTabChecked .dijitTab
  * 				- styles for selected status of top tab button
  * 		same to Bottom, Left, Right Tabs
- * 
+ *
  * 		.dijitTabHover .dijitTab   - styles when mouse hover on tab buttons
  * 		.dijitTabActive .dijitTab  - styles when mouse down on tab buttons
  * 		.dijitTabChecked .dijitTab  - styles when on buttons of selected tab
- * 
+ *
  * 		.dijitTabCloseButton - the close action buttons lie at the right top of each tab button on closable tabs
  * 		.dijitTabCloseButtonHover - styles when mouse hover on close action button
  * 		.dijitTabCloseButtonActive - styles when mouse down on close action button
- * 
+ *
  * Tab Button: (checked status)
- * 
+ *
  * Tab Content Container:
  * 		.dijitTabContainerTop-dijitContentPane
  * 		.dijitTabContainerBottom-dijitContentPane
  * 		.dijitTabContainerLeft-dijitContentPane
  * 		.dijitTabContainerRight-dijitContentPane - for background and padding
- * 
+ *
  * Nested Tabs:
  * 		.dijitTabContainerNested - Container for nested tabs
  * 		.dijitTabContainerTabListNested - tab list container for nested tabs
  */
 .flat .dijitTabContainer {
+  -webkit-border-radius: 3px;
   border-radius: 3px;
 }
 .flat .dijitTabPaneWrapper {
@@ -54,6 +55,7 @@
   border: 1px solid #9e9e9e;
   margin: 0;
   padding: 0;
+  -webkit-border-radius: 0 0 3px 3px;
   border-radius: 0 0 3px 3px;
 }
 .flat .dijitTabContainerTop-tabs,
@@ -67,7 +69,7 @@
 }
 .flat .dijitTab {
   border: 1px solid transparent;
-  background-color: #fff;
+  background-color: #f7f7f7;
   text-align: center;
   -webkit-transition-property: background, padding, margin;
   -moz-transition-property: background, padding, margin;
@@ -87,13 +89,20 @@
   position: relative;
   z-index: 0;
 }
+.flat .dijitTab .tabLabel {
+  color: #cccccc;
+  font-weight: bold;
+}
 .flat .dijitTab:before {
   content: "";
-  display: block;
+  display: none;
   position: absolute;
 }
 .flat .dijitTabHover {
-  background-color: #f2f2f2;
+  background-color: #f7f7f7;
+}
+.flat .dijitTabHover .tabLabel {
+  color: #4c4c4c;
 }
 .flat .dijitTabActive {
   background-color: #e6e6e6;
@@ -160,6 +169,10 @@
   border-bottom: 1px solid #fff;
   border-left: 1px solid #9e9e9e;
   border-right: 1px solid #9e9e9e;
+  background-color: #fff;
+}
+.flat .dijitTabContainerTop-tabs .dijitTabChecked .tabLabel {
+  color: #1555a6;
 }
 .flat .dijitTabContainerTop-tabs .dijitTabChecked:before {
   height: 3px;
@@ -175,6 +188,7 @@
   top: 0;
 }
 .flat .dijitTabPaneWrapper.dijitTabContainerBottom-container {
+  -webkit-border-radius: 3px 3px 0 0;
   border-radius: 3px 3px 0 0;
 }
 .flat .dijitTabContainerBottom-tabs .dijitTab {
@@ -188,6 +202,10 @@
   border-top: 1px solid #fff;
   border-left: 1px solid #9e9e9e;
   border-right: 1px solid #9e9e9e;
+  background-color: #fff;
+}
+.flat .dijitTabContainerBottom-tabs .dijitTabChecked .tabLabel {
+ color: #1555a6;
 }
 .flat .dijitTabContainerBottom-tabs .dijitTabChecked:before {
   height: 3px;
@@ -203,6 +221,7 @@
   top: 0;
 }
 .flat .dijitTabPaneWrapper.dijitTabContainerLeft-container {
+  -webkit-border-radius: 0 3px 3px 0;
   border-radius: 0 3px 3px 0;
 }
 .flat .dijitTabContainerLeft-tabs .dijitTab {
@@ -216,6 +235,10 @@
   border-right: 1px solid #fff;
   border-top: 1px solid #9e9e9e;
   border-bottom: 1px solid #9e9e9e;
+  background-color: #fff;
+}
+.flat .dijitTabContainerLeft-tabs .dijitTabChecked .tabLabel {
+  color: #1555a6;
 }
 .flat .dijitTabContainerLeft-tabs .dijitTabChecked:before {
   width: 3px;
@@ -225,6 +248,7 @@
   top: -1px;
 }
 .flat .dijitTabPaneWrapper.dijitTabContainerRight-container {
+  -webkit-border-radius: 3px 0 0 3px;
   border-radius: 3px 0 0 3px;
 }
 .flat .dijitTabContainerRight-tabs .dijitTab {
@@ -238,6 +262,10 @@
   border-left: 1px solid #fff;
   border-top: 1px solid #9e9e9e;
   border-bottom: 1px solid #9e9e9e;
+  background-color: #fff;
+}
+.flat .dijitTabContainerRight-tabs .dijitTabChecked .tabLabel {
+  color: #1555a6;
 }
 .flat .dijitTabContainerRight-tabs .dijitTabChecked:before {
   width: 3px;
@@ -310,6 +338,7 @@
   margin: 4px;
   padding: 4px 8px;
   border: 1px solid transparent;
+  -webkit-border-radius: 3px;
   border-radius: 3px;
   -webkit-transition-property: background-color, border-color;
   -moz-transition-property: background-color, border-color;
@@ -333,7 +362,12 @@
 .flat .dijitTabContainerTabListNested .dijitTabChecked.dijitTabHover,
 .flat .dijitTabContainerTabListNested .dijitTabChecked.dijitTabActive {
   color: #fff;
-  background-color: #2196f3;
+  background-color: #1555a6;
+}
+.flat .dijitTabContainerTabListNested .dijitTabChecked .tabLabel,
+.flat .dijitTabContainerTabListNested .dijitTabChecked.dijitTabHover .tabLabel,
+.flat .dijitTabContainerTabListNested .dijitTabChecked.dijitTabActive .tabLabel{
+  color: #fff;
 }
 .flat .dijitTabContainerTabListNested .dijitTabChecked:before,
 .flat .dijitTabContainerTabListNested .dijitTabChecked.dijitTabHover:before,
