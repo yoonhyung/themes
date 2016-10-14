@@ -56,8 +56,8 @@
 }
 .flat .dijitSelect .dijitButtonContents,
 .flat .dijitSelect .dijitArrowButton {
-  line-height: 20px;
-  padding: 4px 12px;
+  line-height: 19px;
+  padding: 4px;
   border: 0;
   -webkit-border-radius: 0 1px 1px 0;
   border-radius: 0 1px 1px 0;

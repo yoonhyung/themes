@@ -92,6 +92,7 @@
 .flat .dijitTab .tabLabel {
   color: #cccccc;
   font-weight: bold;
+  height: 16px;
 }
 .flat .dijitTab:before {
   content: "";
@@ -173,6 +174,7 @@
 }
 .flat .dijitTabContainerTop-tabs .dijitTabChecked .tabLabel {
   color: #1555a6;
+  height: 16px;
 }
 .flat .dijitTabContainerTop-tabs .dijitTabChecked:before {
   height: 3px;
