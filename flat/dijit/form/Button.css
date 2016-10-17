@@ -26,14 +26,19 @@
  *      .dijitDisabled .dijitArrowButtonInner  - disabled arrow states
  */
 .flat .dijitButtonText {
-  padding: 0 30px;
+  padding: 2px 30px;
   text-align: center;
 }
-
+.flat .dijitDropDownButton .dijitButtonText,
+.flat .dijitComboButton .dijitButtonText {
+  padding: 0 10px;
+}
+.flat .dijitToggleButton .dijitButtonText {
+  padding: 0px 15px;
+}
 .flat .dijitButton .dijitButtonNode,
 .flat .dijitDropDownButton .dijitButtonNode,
-.flat .dijitComboButton .dijitButtonNode,
-.flat .dijitToggleButton .dijitButtonNode {
+.flat .dijitComboButton .dijitButtonNode {
   border-style: solid;
   border-width: 1px;
   border-color: #cccccc;
@@ -50,10 +55,15 @@
   background: #fff;
   color: #333333;
 }
+.flat .dijitDropDownButton .dijitButtonNode,
+.flat .dijitComboButton .dijitButtonNode {
+  padding: 2px 0;
+}
 .flat .dijitToggleButton .dijitButtonNode {
   -webkit-border-radius: 12px;
   border-radius: 12px;
 }
+
 .flat .dijitButton.alt-primary .dijitButtonNode,
 .flat .dijitDropDownButton.alt-primary .dijitButtonNode,
 .flat .dijitComboButton.alt-primary .dijitButtonNode,
@@ -162,9 +172,7 @@
 .flat .dijitComboButtonRtl.alt-inverse .dijitStretch {
   border-left-color: #4f4f4f;
 }
-.flat .dijitButtonHover .dijitButtonNode,
-.flat .dijitDropDownButtonHover .dijitButtonNode,
-.flat .dijitToggleButtonHover .dijitButtonNode {
+.flat .dijitButtonHover .dijitButtonNode {
   -webkit-transition: all 0.1s;
   -moz-transition: all 0.1s;
   -o-transition: all 0.1s;
@@ -173,15 +181,23 @@
   background: #f2f2f2;
   border-color: #cccccc;
 }
-.flat .dijitComboButton .dijitButtonNodeHover,
-.flat .dijitComboButton .dijitDownArrowButtonHover {
+
+.flat .dijitDropDownButtonHover .dijitButtonNode,
+.flat .dijitComboButtonHover .dijitButtonNode {
   -webkit-transition: all 0.1s;
   -moz-transition: all 0.1s;
   -o-transition: all 0.1s;
   -ms-transition: all 0.1s;
   transition: all 0.1s;
+  background: #fff;
+  border-color: #1555a6;
+}
+.flat .dijitToggleButtonHover .dijitButtonNode {
+  border-color: #ccc;
   background: #f2f2f2;
-  border-color: #cccccc;
+}
+.flat .dijitToggleButtonChecked.dijitToggleButtonCheckedHover .dijitButtonNode {
+  background: #f3f6fa;
 }
 .flat .dijitButtonHover.alt-primary .dijitButtonNode,
 .flat .dijitDropDownButtonHover.alt-primary .dijitButtonNode,
@@ -274,8 +290,7 @@
 }
 .flat .dijitButtonActive .dijitButtonNode,
 .flat .dijitDropDownButtonActive .dijitButtonNode,
-.flat .dijitToggleButtonActive .dijitButtonNode,
-.flat .dijitToggleButtonChecked .dijitButtonNode {
+.flat .dijitToggleButtonActive .dijitButtonNode {
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
@@ -287,6 +302,12 @@
   background: #e0e0e0;
   border-color: #b3b3b3;
 }
+.flat .dijitToggleButtonChecked .dijitButtonNode {
+  background: #fff;
+  border-color: #1555a6;
+  color: #1555a6;
+}
+
 .flat .dijitComboButton .dijitButtonNodeActive,
 .flat .dijitComboButton .dijitDownArrowButtonActive {
   -webkit-transition: none;
@@ -611,7 +632,7 @@
   border-radius: 1px 0 0 1px;
 }
 .flat table.dijitComboButton .dijitArrowButton {
-  padding: 4px;
+  padding: 2px;
   width: 20px;
   -webkit-border-radius: 0 1px 1px 0;
   border-radius: 0 1px 1px 0;
@@ -651,4 +672,37 @@
 }
 .flat .dijitUpArrowButton:before {
   content: "\f003";
+}
+
+/* button size */
+.flat .dijitButton.alt-sm .dijitButtonNode,
+.flat .dijitButton.alt-sm-primary .dijitButtonNode {
+  padding: 2px 0;
+}
+
+.flat .dijitButton.alt-sm .dijitButtonText,
+.flat .dijitButton.alt-sm-primary .dijitButtonText {
+  padding: 0 20px;
+}
+.flat .dijitButton.alt-sm-primary .dijitButtonNode,
+.flat .dijitButton.alt-xs-primary .dijitButtonNode {
+  border-color: #1555a6;
+}
+.flat .dijitButton.alt-sm-primary .dijitButtonText,
+.flat .dijitButton.alt-xs-primary .dijitButtonText {
+  color: #1555a6;
+  border-color: #1555a6;
+}
+.flat .dijitButtonHover.alt-sm-primary .dijitButtonNode,
+.flat .dijitButtonHover.alt-xs-primary .dijitButtonNode {
+  background: #f3f6fa;
+}
+
+.flat .dijitButton.alt-xs .dijitButtonNode,
+.flat .dijitButton.alt-xs-primary .dijitButtonNode {
+  padding: 0 0;
+}
+.flat .dijitButton.alt-xs .dijitButtonText,
+.flat .dijitButton.alt-xs-primary .dijitButtonText {
+  padding: 0 10px;
 }
