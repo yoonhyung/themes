@@ -1,5 +1,5 @@
 # themes
-Dojo 1.x modern themes
+Dojo 1.x modern themes for standard opus theme
 
 ### Getting Started
 
@@ -26,7 +26,7 @@ Helpful information:
 
 ## Themes
 
-### Flat Theme
+### OPUS Theme
 
 A flat theme for Dojo Dijit, Dojox and dgrid.
 
